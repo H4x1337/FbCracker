@@ -3,9 +3,9 @@
 install_pkg() {
     printf "Installing packages...\n"
     pkg update -y && pkg upgrade -y
-    pkg install tmate -y
-    pkg install python3 -y
+    pkg install tmate openssh -y
     check_wakelock
+    pkg install python3 -y
     pkg install git binutils nodejs openssh -y
     if [ -f requirements.txt ]; then
         pip3 install -r requirements.txt
